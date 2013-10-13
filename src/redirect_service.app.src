@@ -11,5 +11,14 @@
 		cowboy
 	]},
 	{mod, {redirect_service_app, []}},
-	{env, []}
+	{env, []},
+	{lager, [
+		{error_logger_redirect, true},
+		{handlers, [
+			{lager_console_backend, debug},
+			{lager_syslog_backend, ["redirect_service", local1, info]},
+			{lager_file_backend, [{file, "error.log"}, {level, error}]},
+			{lager_file_backend, [{file, "console.log"}, {level, info}]}
+		]}
+	]}
 ]}.
