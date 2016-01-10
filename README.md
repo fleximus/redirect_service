@@ -7,7 +7,7 @@ To compile this project you need rebar in your PATH.
 
 Type the following command:
 ```
-$ rebar get-deps compile
+$ make
 ```
 
 You can then start the Erlang node with the following command:
