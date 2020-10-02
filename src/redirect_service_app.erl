@@ -19,7 +19,7 @@ start(_Type, _Args) ->
 			]}
 		]}
 	]),
-	{ok, _} = cowboy:start_http(http, 100, [{port, 8080}], [
+	{ok, _} = cowboy:start_http(http, 100, [{port, 80}], [
 		{env, [{dispatch, Dispatch}]},
 		{middlewares, [cowboy_router, redirect_lookup, cowboy_handler]}
 	]),
